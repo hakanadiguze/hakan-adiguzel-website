@@ -172,6 +172,24 @@
     .skill-bar-wrap { width: 120px; height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
     .skill-bar { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; width: 0; transition: width 1.2s ease; }
 
+    /* TOOLS */
+    .tools-intro { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 2.5rem; max-width: 600px; }
+    .tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .tool-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; transition: all 0.3s; display: flex; flex-direction: column; gap: 1.2rem; }
+    .tool-card:hover { border-color: rgba(0,212,255,0.3); box-shadow: 0 20px 60px rgba(0,0,0,0.3); transform: translateY(-4px); }
+    .tool-coming-soon { opacity: 0.5; border-style: dashed; }
+    .tool-coming-soon:hover { transform: none; box-shadow: none; border-color: var(--border); }
+    .tool-header { display: flex; align-items: center; gap: 1rem; }
+    .tool-icon { font-size: 2.2rem; flex-shrink: 0; }
+    .tool-meta { flex: 1; }
+    .tool-name { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .tool-tag { font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
+    .tool-btn { flex-shrink: 0; background: var(--accent); color: var(--bg); padding: 0.55rem 1.1rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.82rem; transition: all 0.3s; white-space: nowrap; }
+    .tool-btn:hover { box-shadow: 0 0 20px rgba(0,212,255,0.4); }
+    .tool-desc { color: var(--muted); font-size: 0.9rem; line-height: 1.75; }
+    .tool-tech { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .tech-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.28rem 0.7rem; border-radius: 20px; background: rgba(0,212,255,0.07); color: var(--muted); border: 1px solid var(--border); }
+
     /* CONTACT */
     .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .contact-info p { color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
@@ -203,6 +221,7 @@
       .hero-photo-wrap { width: 200px; height: 240px; }
       .about-grid, .contact-wrapper { grid-template-columns: 1fr; gap: 2rem; }
       .services-grid { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -215,9 +234,10 @@
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#tools">Tools</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="mailto:hakanadiguzel@gmail.com" class="btn-nav">Get in Touch</a>
+    <a href="/cdn-cgi/l/email-protection#3e565f555f505f5a57594b445b527e59535f5752105d5153" class="btn-nav">Get in Touch</a>
   </nav>
 
   <!-- HERO -->
@@ -410,6 +430,50 @@
   </section>
 
 
+  <!-- TOOLS -->
+  <section id="tools">
+    <div class="section-inner">
+      <div class="section-label">Built by Me</div>
+      <h2 class="section-title">Tools &amp; Apps</h2>
+      <p class="tools-intro">I build agile tools that I actually use in my own sessions — practical, no-fluff, designed for real teams.</p>
+      <div class="tools-grid">
+
+        <div class="tool-card">
+          <div class="tool-header">
+            <div class="tool-icon">🃏</div>
+            <div class="tool-meta">
+              <div class="tool-name">Planning Poker</div>
+              <div class="tool-tag">Estimation Tool</div>
+            </div>
+            <a href="https://planning-poker-v3.vercel.app/" target="_blank" class="tool-btn">Launch App ↗</a>
+          </div>
+          <p class="tool-desc">A real-time Planning Poker app built for remote and hybrid Scrum teams. Create a room, invite your team, and run story point estimation sessions — no login required, no friction.</p>
+          <div class="tool-tech">
+            <span class="tech-tag">Real-time</span>
+            <span class="tech-tag">Remote-ready</span>
+            <span class="tech-tag">No login</span>
+            <span class="tech-tag">Free to use</span>
+          </div>
+        </div>
+
+        <div class="tool-card tool-coming-soon">
+          <div class="tool-header">
+            <div class="tool-icon">⚙️</div>
+            <div class="tool-meta">
+              <div class="tool-name">More tools coming</div>
+              <div class="tool-tag">In development</div>
+            </div>
+          </div>
+          <p class="tool-desc">I'm continuously building tools for agile teams — retrospective boards, team health checks, and more. Stay tuned or reach out if you have an idea.</p>
+          <div class="tool-tech">
+            <span class="tech-tag">Coming soon</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="section-bg" id="contact">
     <div class="section-inner">
@@ -419,7 +483,7 @@
         <div class="contact-info">
           <p>Whether you're looking for a Release Train Engineer, an Agile Coach, or a Scrum Master for your next transformation — I'd love to hear about your challenge.</p>
           <div class="contact-links">
-            <a href="mailto:hakanadiguzel@gmail.com" class="contact-link"><div class="contact-link-icon">✉</div>hakanadiguzel@gmail.com</a>
+            <a href="/cdn-cgi/l/email-protection#93fbf2f8f2fdf2f7faf4e6e9f6ffd3f4fef2faffbdf0fcfe" class="contact-link"><div class="contact-link-icon">✉</div><span class="__cf_email__" data-cfemail="2048414b414e41444947555a454c60474d41494c0e434f4d">[email&#160;protected]</span></a>
             <a href="https://www.linkedin.com/in/hakan-adiguzel/" target="_blank" class="contact-link"><div class="contact-link-icon">in</div>linkedin.com/in/hakan-adiguzel</a>
             <div class="contact-link"><div class="contact-link-icon">📍</div>Berlin, Germany</div>
           </div>
@@ -439,10 +503,10 @@
   </section>
 
   <footer>
-    <p>© 2025 Hakan Adıgüzel · <a href="mailto:hakanadiguzel@gmail.com">hakanadiguzel@gmail.com</a> · <a href="https://www.linkedin.com/in/hakan-adiguzel/" target="_blank">LinkedIn</a></p>
+    <p>© 2025 Hakan Adıgüzel · <a href="/cdn-cgi/l/email-protection#c5ada4aea4aba4a1aca2b0bfa0a985a2a8a4aca9eba6aaa8"><span class="__cf_email__" data-cfemail="553d343e343b34313c32202f3039153238343c397b363a38">[email&#160;protected]</span></a> · <a href="https://www.linkedin.com/in/hakan-adiguzel/" target="_blank">LinkedIn</a></p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Formspree
     async function submitForm(e) {
       e.preventDefault();
@@ -460,13 +524,4 @@
           body: JSON.stringify({ name, email, message })
         });
         if (res.ok) {
-          document.getElementById('formSuccess').style.display = 'block';
-          document.getElementById('nameInput').value = '';
-          document.getElementById('emailInput').value = '';
-          document.getElementById('messageInput').value = '';
-          btn.textContent = 'Sent ✓';
-        } else { throw new Error(); }
-      } catch {
-        document.getElementById('formError').style.display = 'block';
-        btn.textContent = 'Send Message →';
-        btn.disabled = fal
+          document.getElementById('formSuccess').st
