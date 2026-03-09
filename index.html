@@ -237,7 +237,7 @@
       <li><a href="#tools">Tools</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="/cdn-cgi/l/email-protection#3e565f555f505f5a57594b445b527e59535f5752105d5153" class="btn-nav">Get in Touch</a>
+    <a href="#contact" class="btn-nav">Get in Touch</a>
   </nav>
 
   <!-- HERO -->
@@ -483,7 +483,7 @@
         <div class="contact-info">
           <p>Whether you're looking for a Release Train Engineer, an Agile Coach, or a Scrum Master for your next transformation — I'd love to hear about your challenge.</p>
           <div class="contact-links">
-            <a href="/cdn-cgi/l/email-protection#93fbf2f8f2fdf2f7faf4e6e9f6ffd3f4fef2faffbdf0fcfe" class="contact-link"><div class="contact-link-icon">✉</div><span class="__cf_email__" data-cfemail="2048414b414e41444947555a454c60474d41494c0e434f4d">[email&#160;protected]</span></a>
+            <a class="contact-link" id="emailLink"><div class="contact-link-icon">✉</div>hakanadiguzel&#64;gmail&#46;com</a>
             <a href="https://www.linkedin.com/in/hakan-adiguzel/" target="_blank" class="contact-link"><div class="contact-link-icon">in</div>linkedin.com/in/hakan-adiguzel</a>
             <div class="contact-link"><div class="contact-link-icon">📍</div>Berlin, Germany</div>
           </div>
@@ -503,11 +503,25 @@
   </section>
 
   <footer>
-    <p>© 2025 Hakan Adıgüzel · <a href="/cdn-cgi/l/email-protection#c5ada4aea4aba4a1aca2b0bfa0a985a2a8a4aca9eba6aaa8"><span class="__cf_email__" data-cfemail="553d343e343b34313c32202f3039153238343c397b363a38">[email&#160;protected]</span></a> · <a href="https://www.linkedin.com/in/hakan-adiguzel/" target="_blank">LinkedIn</a></p>
+    <p>© 2025 Hakan Adıgüzel · <a id="footerEmailLink">hakanadiguzel&#64;gmail&#46;com</a> · <a href="https://www.linkedin.com/in/hakan-adiguzel/" target="_blank">LinkedIn</a></p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Formspree
+  <script>
+    // Set email hrefs via JS to avoid Cloudflare obfuscation
+    (function() {
+      var e = 'hakanadiguzel' + String.fromCharCode(64) + 'gmail.com';
+      var m = 'mailto:' + e;
+      var ids = ['emailLink', 'footerEmailLink'];
+      function fix() {
+        ids.forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) el.href = m;
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fix);
+      } else { fix(); }
+    })();
     async function submitForm(e) {
       e.preventDefault();
       const btn = document.getElementById('submitBtn');
